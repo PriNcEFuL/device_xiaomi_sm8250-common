@@ -128,6 +128,9 @@ PRODUCT_PACKAGES += \
     libvisualizer \
     libvolumelistener
 
+# Audio Daemon
+PRODUCT_PACKAGES += vendor.qti.audio-adsprpc-service.rc
+
 # Audio Alsa Extensions
 PRODUCT_PACKAGES += \
    libaudioroute \
