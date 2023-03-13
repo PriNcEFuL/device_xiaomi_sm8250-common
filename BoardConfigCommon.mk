@@ -122,6 +122,9 @@ TARGET_KERNEL_SOURCE := kernel/xiaomi/alioth
 # Kernel Supported Features
 BOARD_RAMDISK_USE_LZ4 := true
 
+# Malloc
+MALLOC_SVELTE_FOR_LIBC32 := true
+
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
 ifeq ($(TARGET_IS_VAB),true)
