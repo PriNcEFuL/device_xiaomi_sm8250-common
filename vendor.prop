@@ -340,3 +340,7 @@ persist.vendor.qti.inputopts.enable=true
 persist.vendor.qti.inputopts.movetouchslop=0.6 
 ro.qcom.adreno.qgl.ShaderStorageImageExtendedFormats=0
 
+# Video Calling
+persist.vendor.radio.report_codec=1 
+persist.vendor.radio.vdp_on_ims_cap=1
+persist.vendor.qti.telephony.vt_cam_interface=2
