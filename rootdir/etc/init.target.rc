@@ -76,6 +76,14 @@ on init
     write /sys/block/dm-2/queue/read_ahead_kb 2048
     write /sys/block/dm-3/queue/read_ahead_kb 2048
 
+    # Xiaomi Thermal Profiles permissions
+    chmod 0664 /sys/class/thermal/thermal_message/sconfig
+    chown system system /sys/class/thermal/thermal_message/sconfig
+    chmod 0664 /sys/class/thermal/thermal_message/balance_mode
+    chown system system /sys/class/thermal/thermal_message/balance_mode
+    chmod 0664 /sys/class/thermal/thermal_message/flash_state
+    chown cameraserver cameraserver /sys/class/thermal/thermal_message/flash_state
+
 service vendor.camera-provider-2-4 /vendor/bin/hw/android.hardware.camera.provider@2.4-service_64
     override
     interface android.hardware.camera.provider@2.4::ICameraProvider legacy/0
@@ -230,12 +238,6 @@ on boot
     chmod 0664 /sys/class/drm/card0-DSI-1/disp_pcc
     chown system system /sys/class/backlight/panel0-backlight/brightness_clone
     chmod 0664 /sys/class/power_supply/battery/dc_thermal_levels
-    chmod 0664 /sys/class/thermal/thermal_message/sconfig
-    chown system system /sys/class/thermal/thermal_message/sconfig
-    chmod 0664 /sys/class/thermal/thermal_message/balance_mode
-    chown system system /sys/class/thermal/thermal_message/balance_mode
-    chmod 0664 /sys/class/thermal/thermal_message/flash_state
-    chown cameraserver cameraserver /sys/class/thermal/thermal_message/flash_state
     # Load all wlan drivers
     exec_background u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules/ qca_cld3_qca6390 qca_cld3_qca6490
 
