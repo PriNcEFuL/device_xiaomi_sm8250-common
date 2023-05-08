@@ -3,6 +3,15 @@ suspend.short_suspend_threshold_millis=2000
 suspend.short_suspend_backoff_enabled=true
 suspend.max_sleep_time_millis=40000
 
+# audio
+ro.audio.usb.period_us=20375
+af.resampler.quality=7
+ro.audio.resampler.psd.stopband=132
+ro.audio.resampler.psd.halflength=960
+ro.audio.resampler.psd.cutoff_percent=98
+ro.audio.resampler.psd.tbwcheat=0
+persist.bluetooth.sbc_hd_higher_bitrate=1
+
 # Blur
 ro.surface_flinger.supports_background_blur=1
 ro.sf.blurs_are_expensive=1
